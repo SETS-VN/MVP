@@ -20,9 +20,12 @@ Web Platform shall includes the following part:
 	* Green Bonds: button only
 	* Qouta: button only
 	* ERU (Emission Reduction Unit): button only
+	* Reserve/ Banking of ERs
+	* Retire/ Expire/ Cancel the ERs
 
 4. Carbon Calculator:
 	* __page content__: redirect to Carbon Calculator
+5. Payment/ Donation of ERs
 	
-5. My account: (as Icon)
+6. My account: (as Icon)
 	* __page content__: login and sign up
