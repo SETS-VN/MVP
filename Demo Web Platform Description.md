@@ -5,6 +5,7 @@ Web Platform is the backbone of our prouct. Different parts shall all be integra
 Web Platform shall includes the following part:
 
 1. About SETS:
+
 	__page content__: helps understand "Emission Trading System"
 
 1. About Us: (drop - down list as below)
@@ -14,6 +15,7 @@ Web Platform shall includes the following part:
 		* __page content__: contact of team members
 		
 1. Carbon Calculator & Green Games
+
 	__page content__: redirect to Carbon Calculator
 
 1. Trade Emission: (drop - down list as below)
@@ -30,7 +32,6 @@ Web Platform shall includes the following part:
 	* ERs (verified and kept in the SETS E - wallet)
 
 1. My account: (as Icon)
-
 
 	__page content__:
 	* if __not login__: display login and sign up page
