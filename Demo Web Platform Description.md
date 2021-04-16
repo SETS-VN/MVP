@@ -18,7 +18,7 @@ Web Platform shall includes the following part:
 
 	__page content__: redirect to Carbon Calculator
 
-1. Trade Emission: (drop - down list as below)
+1. Trade Emission: (drop - down list as below) All units verified and kept in the SETS E - wallet
 	* Emission Package: 
 		* __page content__: list all Emission packages like [example](http://www.ccer.com.cn/listing/)
 	* P2P Emission Trading: button only. 
@@ -29,7 +29,11 @@ Web Platform shall includes the following part:
 	* ERU (Emission Reduction Unit): button only
 	* Green Points: button only
 	* Green dollar tokens: button only
-	* ERs (verified and kept in the SETS E - wallet)
+	* ITMO (Paris Agreement's Unit)
+	* JCM (Japan's Joint Carbon Mechanism)
+	* REDD/ Forest carbon certificates
+	* Carbon Offset
+	* VCU (Gold Standard's Verified Carbon Unit)
 
 1. My account: (as Icon)
 
@@ -40,9 +44,12 @@ Web Platform shall includes the following part:
 		* Payment (to add real money to SETS E - wallet: Visa, Momo, ...): button only
 
 1. Others
-	* User donation to SETS' CSR projects, or donation of ERs
+	* User donation to SETS' CSR/ ESG projects, or donation of ERs
 	* Reserve/ Banking of ERs
 	* Retire/ Expire/ Cancel the ERs
 	* Carbon taxation accounting (if the law requires)
+	* Carbon asset collateral
+	* Carbon derivatives: Futures, forwards, swaps, options of carbon credits.
+	
 	
 
