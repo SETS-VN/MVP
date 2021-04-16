@@ -12,20 +12,28 @@ Web Platform shall includes the following part:
 		* __page content__: introduce team members
 	* Contact:
 		* __page content__: contact of team members
+3. Carbon Calculator & Green Games
+	* __page content__: redirect to Carbon Calculator
 
-3. Trade Emission: (drop - down list as below)
+4. My account: (as Icon)
+	* __page content__: login and sign up
+	* 
+5. Point/ Green dollar token/ ER verified and kept in the SETS wallet.
+
+6. Trade Emission: (drop - down list as below)
 	* Emission Package: 
 		* __page content__: list all Emission packages like [example](http://www.ccer.com.cn/listing/)
 	* P2P Emission Trading: button only. This will alert team Block Chain to demo trading as Jacob has planned in [block chain](https://github.com/SETS-VN/project-roadmap/blob/main/milestone-1.md)
 	* Green Bonds: button only
-	* Qouta: button only
+	* Quota: button only
 	* ERU (Emission Reduction Unit): button only
+	
+7. Payment/ 
+
+9. Others
+	* Donation of ERs
 	* Reserve/ Banking of ERs
 	* Retire/ Expire/ Cancel the ERs
-
-4. Carbon Calculator:
-	* __page content__: redirect to Carbon Calculator
-5. Payment/ Donation of ERs
+	* Carbon taxation accounting (if the law requires)
 	
-6. My account: (as Icon)
-	* __page content__: login and sign up
+
