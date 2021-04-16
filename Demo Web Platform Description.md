@@ -18,7 +18,7 @@ Web Platform shall includes the following part:
 4. My account: (as Icon)
 	* __page content__: login and sign up
 	* 
-5. Point/ Green dollar token/ ER verified and kept in the SETS wallet.
+5. Green Points/ Green dollar tokens/ ERs verified and kept in the SETS wallet.
 
 6. Trade Emission: (drop - down list as below)
 	* Emission Package: 
