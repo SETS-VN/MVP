@@ -27,10 +27,11 @@ Web Platform shall includes the following part:
 	* Green Bonds: button only
 	* Quota: button only
 	* ERU (Emission Reduction Unit): button only
-	
+	* Demo of Blockchain tokens transferred.
+
 7. Payment
 
-9. Others
+8. Others
 	* User donation to SETS' CSR projects, or donation of ERs
 	* Reserve/ Banking of ERs
 	* Retire/ Expire/ Cancel the ERs
