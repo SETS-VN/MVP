@@ -28,10 +28,10 @@ Web Platform shall includes the following part:
 	* Quota: button only
 	* ERU (Emission Reduction Unit): button only
 	
-7. Payment/ 
+7. Payment
 
 9. Others
-	* Donation of ERs
+	* User donation to SETS' CSR projects, or donation of ERs
 	* Reserve/ Banking of ERs
 	* Retire/ Expire/ Cancel the ERs
 	* Carbon taxation accounting (if the law requires)
