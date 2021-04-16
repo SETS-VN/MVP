@@ -32,7 +32,6 @@ Web Platform shall includes the following part:
 	* ITMO (Paris Agreement's Unit)
 	* JCM (Japan's Joint Carbon Mechanism)
 	* REDD/ Forest carbon certificates
-	* Carbon Offset
 	* VCU (Gold Standard's Verified Carbon Unit)
 
 1. My account: (as Icon)
@@ -44,11 +43,12 @@ Web Platform shall includes the following part:
 		* Payment (to add real money to SETS E - wallet: Visa, Momo, ...): button only
 
 1. Others
+	* Carbon Offset
 	* User donation to SETS' CSR/ ESG projects, or donation of ERs
 	* Reserve/ Banking of ERUs
 	* Retire/ Expire/ Cancel the ERUs
 	* Carbon taxation accounting (if the law requires)
-	* Carbon asset collateral
+	* Carbon credit collateral
 	* Carbon derivatives: Futures, forwards, swaps, options of carbon credits.
 	
 	
