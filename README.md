@@ -1,4 +1,4 @@
-# MVP list of features to implement
+# Potential list of features to implement. 
 ## Requirements for the user:
 1. User signs-up/ log-in as a person
 2. User deposits money with Momo
