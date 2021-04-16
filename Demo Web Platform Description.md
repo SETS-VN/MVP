@@ -25,14 +25,14 @@ Web Platform shall includes the following part:
 		* This will alert team Block Chain to demo trading as Jacob has planned in [block chain](https://github.com/SETS-VN/project-roadmap/blob/main/milestone-1.md). 
 		* Demo of Blockchain tokens transferred.
 	* Green Bonds: button only
-	* Quota: button only
-	* ERU (Emission Reduction Unit): button only
+	* Emission Quota: button only
+	* Standard units such as ERU-Emission Reduction Unit,CER - Certified Emission Reduction, AAU - Assigned Amount Unit, RMU - Removal Unit etc: button only
 	* Green Points: button only
 	* Green dollar tokens: button only
-	* ITMO (Paris Agreement's Unit)
+	* ITMO (Paris Agreement's SDM Unit)
 	* JCM (Japan's Joint Carbon Mechanism)
 	* REDD/ Forest carbon certificates
-	* VCU (Gold Standard's Verified Carbon Unit)
+	* Voluntary units such as VCU (Gold Standard's Verified Carbon Unit)
 
 1. My account: (as Icon)
 
@@ -44,9 +44,9 @@ Web Platform shall includes the following part:
 
 1. Others
 	* Carbon Offset
-	* User donation to SETS' CSR/ ESG projects, or donation of ERs
-	* Reserve/ Banking of ERUs
-	* Retire/ Expire/ Cancel the ERUs
+	* Donation to SETS' CSR/ ESG projects, or donation of ERs
+	* Reserve/ Banking of ERs
+	* Retire/ Expire/ Cancel the ERs
 	* Carbon taxation accounting (if the law requires)
 	* Carbon credit collateral
 	* Carbon derivatives: Futures, forwards, swaps, options of carbon credits.
