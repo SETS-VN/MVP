@@ -5,7 +5,7 @@ Web Platform is the backbone of our prouct. Different parts shall all be integra
 Web Platform shall includes the following part:
 
 1. About SETS:
-	* __page content__: helps understand "Emission Trading System"
+	__page content__: helps understand "Emission Trading System"
 
 1. About Us: (drop - down list as below)
 	* Developing team members:
@@ -14,7 +14,7 @@ Web Platform shall includes the following part:
 		* __page content__: contact of team members
 		
 1. Carbon Calculator & Green Games
-	* __page content__: redirect to Carbon Calculator
+	__page content__: redirect to Carbon Calculator
 
 1. Trade Emission: (drop - down list as below)
 	* Emission Package: 
@@ -30,10 +30,13 @@ Web Platform shall includes the following part:
 	* ERs (verified and kept in the SETS E - wallet)
 
 1. My account: (as Icon)
-	* __page content__: login and sign up
-	* __after login__:  
-		* SETS E - wallet (contains real money and Carbon Credit)(1 Carbon Credit = 1 ton of reduced CO2 for simplicity)
-		* Payment options (to add real money to SETS E - wallet): Visa, Momo, ...
+
+
+	__page content__:
+	* if __not login__: display login and sign up page
+	* if __login__ (drop - down list as below):
+		* E - wallet (contains real money and Carbon Credit)(1 Carbon Credit = 1 ton of reduced CO2 for simplicity): button only
+		* Payment (to add real money to SETS E - wallet: Visa, Momo, ...): button only
 
 1. Others
 	* User donation to SETS' CSR projects, or donation of ERs
