@@ -45,8 +45,8 @@ Web Platform shall includes the following part:
 
 1. Others
 	* User donation to SETS' CSR/ ESG projects, or donation of ERs
-	* Reserve/ Banking of ERs
-	* Retire/ Expire/ Cancel the ERs
+	* Reserve/ Banking of ERUs
+	* Retire/ Expire/ Cancel the ERUs
 	* Carbon taxation accounting (if the law requires)
 	* Carbon asset collateral
 	* Carbon derivatives: Futures, forwards, swaps, options of carbon credits.
