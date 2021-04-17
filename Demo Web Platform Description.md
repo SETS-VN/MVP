@@ -1,6 +1,9 @@
 # Demo Web Platform Description 
 Web Platform is the backbone of our prouct. Different parts shall all be integrated onto Web Platform.
 
+Demo website: [website](http://sets.byethost15.com/)
+
+
 # Detailed Description
 Web Platform shall includes the following part:
 
