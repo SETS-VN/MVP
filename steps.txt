@@ -1,0 +1,21 @@
+1. Tùy vào bài toán thực tế mà đưa ra kiến trúc hệ thống cho hợp lý
+
+1. Phải có kiến trúc hệ thống (solution architect)
+	* Kiến trúc để chịu tải lớn: hàng chục nghìn user (đồng thời 1000 users) 
+	* Kiến trúc để bảo mật tốt
+
+(Quản lý: tính tới cả DB):
+Mỗi micro service khác nhau dẫn tới sử dụng DB khác nhau. Một hệ thống sử dụng nhiều DB
+* Reddis, Mem Cache: lưu sesssion account hoặc giỏ hàng (tại vì lưu trên RAM)
+* SQL (ổn định, lưu trên hard drive)
+
+(Hệ thống integrate nhiều API)
+(Hệ thống host trên cloud)
+
+(Quản lý session log in/log out)
+
+1. Code dựa trên kiến trúc hệ thống để có thể scale dần dần lên
+
+load_balancing
+
+tham gia các cộng đồng Amazon trên Facebook (AWS)
