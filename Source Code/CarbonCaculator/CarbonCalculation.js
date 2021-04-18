@@ -71,3 +71,5 @@ class CarbonCalculation{
 
     }
 }
+
+export default CarbonCalculation;

@@ -11,18 +11,22 @@
         "Eggs" : [20.7734633330677, 0],
         "Pork" : [27.9104927492666, 0],
         "Chicken, turkey" : [18.9919556676314, 0],
-        "Beef" : [, 0,],
-        "Mutton, goat" : [, 0,],
-        "Fish" : [, 0,],
-        "Sugar" : [, 0,],
-        "Vegetable oil" : [, 0,],
-        "Margarine" : [, 0,],
-        "Coffee & tea" : [, 0,],
-        "Juice & wine" : [, 0,],
-        "Beer" : [, 0,],
-        "Cotton" : [, 0,],
-        "Wool" : [, 0,],
-        "Cigarettes, other tobacco products" : [, 0,],
-        "Timber" : [, 0,]
+        "Beef" : [54.6810606714617, 32.282420803415],
+        "Mutton, goat" : [46.9471651401319, 31.121305388961],
+        "Fish" : [121.905959403869, 0],
+        "Sugar" : [3.42500709712467, 0],
+        "Vegetable oil" : [61.7534027331211, 0],
+        "Margarine" : [61.7534027331211, 0],
+        "Coffee & tea" : [40.1401028109444, 0],
+        "Juice & wine" : [3.77360548932992, 0],
+        "Beer" : [1.97484294849812, 0],
+        "Cotton" : [39.2725078863187, 0],
+        "Wool" : [0, 0],
+        "Cigarettes, other tobacco products" : [13.5699376705637, 0],
+        "Timber" : [6468.90502040795, 0]
+    },
+    "Constants and Conversion Factors":{
+        "absorption rate" : 0.95,
+        "% absorbed by oceans" : 0.31
     }
 }
