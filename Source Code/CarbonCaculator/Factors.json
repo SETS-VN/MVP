@@ -1,0 +1,28 @@
+{
+    "Footprint Intensity" : {
+        "Veggies, potatoes & fruit" : [1.5761556044097, 0],
+        "Bread and bakery products" : [8.32034796589599, 0],
+        "Flour, rice, noodles, cereal products (exc maize)" : [8.32034796589599, 0],
+        "Maize" : [4.9563371416116, 0],
+        "Beans and other dried pulses" : [23.9749042674038, 0],
+        "Milk, cream, yogurt, sour cream" : [2.31670228910906, 1.24432374622176],
+        "Ice cream, other frozen dairy" : [11.5835114455453, 6.22161873110881],
+        "Cheese, butter" : [23.1670228910906, 12.4432374622176],
+        "Eggs" : [20.7734633330677, 0],
+        "Pork" : [27.9104927492666, 0],
+        "Chicken, turkey" : [18.9919556676314, 0],
+        "Beef" : [, 0,],
+        "Mutton, goat" : [, 0,],
+        "Fish" : [, 0,],
+        "Sugar" : [, 0,],
+        "Vegetable oil" : [, 0,],
+        "Margarine" : [, 0,],
+        "Coffee & tea" : [, 0,],
+        "Juice & wine" : [, 0,],
+        "Beer" : [, 0,],
+        "Cotton" : [, 0,],
+        "Wool" : [, 0,],
+        "Cigarettes, other tobacco products" : [, 0,],
+        "Timber" : [, 0,]
+    }
+}
