@@ -14,15 +14,19 @@
     - Change size & spacing
   - Change display & specific text
 ## Getting Started & Testing
-
-First, run the development server:
-
+1. Requirements
+- Node: please use one of the latest versions of node (14.16.1, >=15 should work). If there is an outdated node version, I recommend using the nvm package.
+2. run 
+```bash
+npm install
+```
+3. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-The Carbon Calculator is at [http://localhost:3000/carbonCalc](http://localhost:3000/carbonCalc)
-
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.  
+The Carbon Calculator is at [http://localhost:3000/carbonCalc](http://localhost:3000/carbonCalc)  
+The Eco footprint calculator is at [http://localhost:3000/ecoCalc](http://localhost:3000/carbonCalc)
