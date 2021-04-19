@@ -92,10 +92,6 @@ class CarbonCalculation{
 
         //find Cropland total
         //find Pasture total
-        //find Forest total
-        result[3] = 0;
-        //find Built-Up Land total
-        result[4] = 0;
         //find Fisheries total
 
         return result;
