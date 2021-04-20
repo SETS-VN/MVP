@@ -1,7 +1,7 @@
 export default function Header(){
     return(
-        <h1>
-            This will become a header
-        </h1>
+        <div>
+            <img src ="/images/sets-header.png" style = {{objectFit: 'fill'}}/>
+        </div>
     )
 };
