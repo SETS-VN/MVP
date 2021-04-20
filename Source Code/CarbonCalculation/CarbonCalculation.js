@@ -91,9 +91,40 @@ class CarbonCalculation{
         }
 
         //find Cropland total
-        //find Pasture total
-        //find Fisheries total
+        metric_coff = new Array(val.length).fill(1);
+        if(this.metric === "us"){
+            metric_coff = [0.454,0.454,0.454,0.454,0.454,0.946,0.946,0.454,0.05,0.454,0.454,0.454,0,0.454,0.946,0.454,0.454,0.946,0.946,0.09290304,0];
+        }
+        metric_coff[8] = 0.05;
+        metric_coff[12] = 0;
+        metric_coff[val.length-1] = 0;
 
+        let footprint_keys = Object.keys(factors["Footprint Intensity"]);
+        let footprint_coff = new Array(val.length);
+        let count = 0;
+        footprint_keys.forEach(function(ele){
+            if(ele === "Mutton, goat") continue;
+            if(count === val.length) break;
+            footprint_coff[count] = factors["Footprint Intensity"][ele][0];
+            count++;
+        });
+
+        for(let i=0;i<val.length-2;i++){
+            result[1] += val[i]*metric_coff[i]*factors["Constants and Conversion Factors"]["Pre-purchase food loss"]*footprint_coff[i];
+        }
+
+        result[1] += val[val.length-2]*metric_coff[val.length-2]*factors["Equivalence and Yield Factors & Footprint"].Cropland[0];
+        result[1] += val[val.length-1]/6.0*0.5*result[1]/365.0;
+        //find Pasture total
+        result[2] += ((this.metric === "us") ? 0.946 : 1)*val[5]*factors["Footprint Intensity"]["Milk, cream, yogurt, sour cream"][1]*factors["Constants and Conversion Factors"]["Pre-purchase food loss"];
+        result[2] += ((this.metric === "us") ? 0.946 : 1)*val[6]*factors["Footprint Intensity"]["Ice cream, other frozen dairy"][1]*factors["Constants and Conversion Factors"]["Pre-purchase food loss"];
+        result[2] += ((this.metric === "us") ? 0.454 : 1)*val[7]*factors["Footprint Intensity"]["Cheese, butter"][1]*factors["Constants and Conversion Factors"]["Pre-purchase food loss"];
+        result[2] += ((this.metric === "us") ? 0.454 : 1)*val[11]*factors["Footprint Intensity"]["Beef"][1]*factors["Constants and Conversion Factors"]["Pre-purchase food loss"];
+        result[2] += val[val.length - 1]/6.0*0.5*result[2]/365.0;
+        //find Fisheries total
+        result[5] += ((this.metric === "us") ? 0.454 : 1)*val[12]*footprint_coff[12]*factors["Constants and Conversion Factors"]["Pre-purchase food loss"];
+        result[5] += val[val.length-1]/6.0*0.5*result[5]/365.0;
+        
         return result;
     }
 
