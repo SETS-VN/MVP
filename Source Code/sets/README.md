@@ -28,5 +28,5 @@ yarn dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.  
-The Carbon Calculator is at [http://localhost:3000/carbonCalc](http://localhost:3000/carbonCalc)  
-The Eco footprint calculator is at [http://localhost:3000/ecoCalc](http://localhost:3000/carbonCalc)
+The Carbon Calculator is at [http://localhost:3000/carbon-calculator](http://localhost:3000/carbonCalc)  
+<!-- The Eco footprint calculator is at [http://localhost:3000/ecoCalc](http://localhost:3000/carbonCalc) -->
