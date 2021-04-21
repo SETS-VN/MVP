@@ -46,7 +46,7 @@ Web Platform shall includes the following part:
 1. 	Other ERUs:
 * Government:
 	* Green Bonds: button only
-	* Emission Quota: button only
+	* Emission Quota/ Permit Auction: button only
 	
 * SETS:
 	* Green dollar tokens: button only
