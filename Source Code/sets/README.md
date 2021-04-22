@@ -8,7 +8,6 @@
   - Edit items in carbon calculator following this: [Simplified Carbon calculator sheet](https://onedrive.live.com/view.aspx?resid=EF43F4B7072F8749!19641&ithint=file%2cxlsx&authkey=!AP_FdQe9ATbl-Jo)
   - Edit numbers in carbon 
   - Preload both carbon and eco calculators
-  - Add "gamification"/ make the form more interesting
   - Add comparison w/ Average CO2 in result
   - Add pie chart in result detailing each amount
   - Deploy with Vercel

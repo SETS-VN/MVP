@@ -13,7 +13,6 @@ export default function GoodsDisplay(props){
         next = {true}
         nextCategory = {props.nextCategory}
         nextText = "Services"
-        categoryValue = {props.categoryValue}
         >
             {props.children}
         </CategoryManager>
