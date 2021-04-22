@@ -5,14 +5,13 @@
   - Electricity isn't divided into groups
   - Bus and Trains aren't divided into separate types
 - Changes needed:
-  - Edit the values in ItemInfo.js (everything is currently default to 1) for the logic
-  - Maybe update formula?
-  - Add header to match w/ Wordpress Header in Demo app
-  - Make the carbon calculator look a bit better
-    - Create a icon wrapper to edit icons
-    - Add color?
-    - Change size & spacing
-  - Change display & specific text
+  - Edit itmes in carbon calculator
+  - Edit numbers in carbon 
+  - Preload both carbon and eco calculators
+  - Add "gamification"/ make the form more interesting
+  - Add comparison w/ Average CO2 in result
+  - Add pie chart in result detailing each amount
+  - Deploy with Vercel
 ## Getting Started & Testing
 1. Requirements
 - Node: please use one of the latest versions of node (14.16.1, >=15 should work). If there is an outdated node version, I recommend using the nvm package.
@@ -28,5 +27,5 @@ yarn dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.  
-The Carbon Calculator is at [http://localhost:3000/carbon-calculator](http://localhost:3000/carbonCalc)  
-<!-- The Eco footprint calculator is at [http://localhost:3000/ecoCalc](http://localhost:3000/carbonCalc) -->
+The Carbon Calculator is at [http://localhost:3000/carbon-calculator](http://localhost:3000/carbon-calculator)  
+The Eco footprint calculator is at [http://localhost:3000/ecoCalc](http://localhost:3000/eco-calculator)
