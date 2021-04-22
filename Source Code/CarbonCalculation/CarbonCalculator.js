@@ -118,7 +118,7 @@ class CarbonCalculation{
      * find total emission
      */
     findTotal(){
-        return this.total_co2;
+        return (this.num_of_people == 0) ? 0 : this.total_co2/this.num_of_people;
     }
 }
 
