@@ -7,7 +7,7 @@ import ResultDisplay from './subComponents/resultDisplay'
 import ExtraInputDisplay from './subComponents/itemsDisplay/extraInputDisplay'
 import CategoryManager from './subComponents/categories/categoryManager'
 import FoodDisplay from './subComponents/categories/food'
-import HouseDisplay from './subComponents/categories/house'
+import HouseEnergyDisplay from './subComponents/categories/houseing-energy'
 import EnergyDisplay from './subComponents/categories/energy'
 import TransitDisplay from './subComponents/categories/transit'
 import GoodsDisplay from './subComponents/categories/goods'
@@ -22,11 +22,11 @@ export default function CarbonCalc() {
     /**
      * Category management
      */
-    const categories = ["food", "housing", "energy", "transit", "goods", "services", "waste", "result"];
+    const categories = ["food", "housing-energy", "transit", "goods", "services", "waste", "result"];
     const [category, setCategory] = useState(0);
 
     function nextCategory() {
-        if (category < 7) {
+        if (category < 6) {
             setCategory(category + 1);
         }
     }
@@ -61,15 +61,8 @@ export default function CarbonCalc() {
      * In-memory item management
      */
     const items = Items;
-    function changeOutsideValue(id, val) {
-        items[id - 1].outsideFactor = val;
-    }
     function changeValue(id, val) {
         items[id - 1].value = val;
-    }
-
-    function changeChoice(id, calcValue){
-        items[id-1].calcValue = calcValue;
     }
 
     /**
@@ -77,54 +70,25 @@ export default function CarbonCalc() {
      */
     const carbonItemList = {
         "food": [],
-        "housing": [],
-        "energy": [],
-        "transit": [],
+        "housing-energy": [],
+        "transportation": [],
         "goods": [],
         "services": [],
         "waste": [],
     };
 
     items.forEach((item) => {
-        if (item.category === "typing") {
-            carbonItemList[item.type].push(
-                <ExtraChoiceDisplay
-                    key={item.id}
-                    id = {item.id}
-                    associatedID={item.associatedID}
-                    valueList={item.valueList}
-                    name={item.name}
-                    calcValue = {item.calcValue}
-                    changeOutsideFactor={changeOutsideValue}
-                    changeChoice = {changeChoice}
-                />
-            )
-        } else if (item.category === "input") {
-            carbonItemList[item.type].push(
-                <ExtraInputDisplay
-                    key={item.id}
-                    id={item.id}
-                    associatedID={item.associatedID}
-                    name={item.name}
-                    value = {item.value}
-                    defValue = {item.defaultValue}
-                    changeOutsideFactor={changeOutsideValue}
-                    changeValue = {changeValue}
-                />
-            )
-        } else {
-            carbonItemList[item.category].push(
-                <ItemDisplay
-                    key={item.id}
-                    id={item.id}
-                    name={item.name}
-                    icon={item.icon}
-                    measurement={item.measurement}
-                    value = {item.value}
-                    changeValue={changeValue}
-                />
-            )
-        }
+        carbonItemList[item.category].push(
+            <ItemDisplay
+                key={item.id}
+                id={item.id}
+                name={item.name}
+                icon={item.icon}
+                measurement={item.measurement}
+                value={item.value}
+                changeValue={changeValue}
+            />
+        )
     });
 
     const Content = () => {
@@ -136,22 +100,13 @@ export default function CarbonCalc() {
                 </FoodDisplay>
             )
         }
-        else if (categories[category] === "housing") {
+        else if (categories[category] === "housing-energy") {
             return (
-                <HouseDisplay
+                <HouseEnergyDisplay
                     previousCategory={previousCategory}
                     nextCategory={nextCategory}>
-                    {carbonItemList["housing"]}
-                </HouseDisplay>
-            )
-        }
-        else if (categories[category] === "energy") {
-            return (
-                <EnergyDisplay
-                    previousCategory={previousCategory}
-                    nextCategory={nextCategory}>
-                    {carbonItemList["energy"]}
-                </EnergyDisplay>
+                    {carbonItemList["housing-energy"]}
+                </HouseEnergyDisplay>
             )
         }
         else if (categories[category] === "transit") {
@@ -159,7 +114,7 @@ export default function CarbonCalc() {
                 <TransitDisplay
                     previousCategory={previousCategory}
                     nextCategory={nextCategory}>
-                    {carbonItemList["transit"]}
+                    {carbonItemList["transportation"]}
                 </TransitDisplay>
             )
         }
@@ -192,21 +147,22 @@ export default function CarbonCalc() {
         }
         else { // should be the result
             return (
-                <ResultDisplay 
-                value = {sum}
-                previousCategory = {previousCategory}/>
+                <ResultDisplay
+                    value={sum}
+                    previousCategory={previousCategory} />
             )
         }
     }
 
+    // scroll to top when change content
     useEffect(() => {
-        pageStartRef.current.scrollIntoView({block: 'start', behavior: 'smooth'})
+        pageStartRef.current.scrollIntoView({ block: 'start', behavior: 'smooth' })
     }, [category]);
 
     return (
         <>
-            <div ref = {pageStartRef}></div>
-            <Content/>
+            <div ref={pageStartRef}></div>
+            <Content />
         </>
     )
 }

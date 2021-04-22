@@ -1,7 +1,7 @@
 import CategoryManager from './categoryManager'
 import {GiHouse} from 'react-icons/gi';
 
-export default function HouseDisplay(props){
+export default function HouseEnergyDisplay(props){
     return (
         <CategoryManager
         icon = {<GiHouse size = {80}/>}
@@ -12,7 +12,7 @@ export default function HouseDisplay(props){
         previousText = "Food Consumption"
         next = {true}
         nextCategory = {props.nextCategory}
-        nextText = "Energy Consumption"
+        nextText = "Transportation"
         >
             {props.children}
         </CategoryManager>
