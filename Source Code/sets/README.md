@@ -5,13 +5,14 @@
   - Electricity isn't divided into groups
   - Bus and Trains aren't divided into separate types
 - Changes needed:
-  - Edit itmes in carbon calculator
+  - Edit items in carbon calculator
   - Edit numbers in carbon 
   - Preload both carbon and eco calculators
   - Add "gamification"/ make the form more interesting
   - Add comparison w/ Average CO2 in result
   - Add pie chart in result detailing each amount
   - Deploy with Vercel
+  - Add chatbot
 ## Getting Started & Testing
 1. Requirements
 - Node: please use one of the latest versions of node (14.16.1, >=15 should work). If there is an outdated node version, I recommend using the nvm package.
