@@ -12,42 +12,64 @@ class CarbonCalculation{
         if(typeof num_of_people != 'number') throw "num_of_people has to be number";
 
         this.num_of_people = num_of_people;
-        this.total_co2 = 0;
-        this.#findElectricityShare();
-    }
-
-    /**
-     * find electricity share
-     */
-    #findElectricityShare(){
-        let eco_keys = CarbonFactors["ElectricitySource"].keys();
+        this.total_co2 = {
+            totalElec: 0,
+            "OtherHomeEnergyFactor": 0,
+            "TravelFactor": 0,
+            "FoodFactor": 0,
+            "ConsumerGoodsFactor": 0,
+            "ServicesFactor": 0,
+            "WasteFactor": 0,
+        };
+        let eco_keys = Object.keys(CarbonFactors["ElectricitySource"]);
         
         // find total
-        this.elec_total = 0;
+        let elec_total = 0;
         eco_keys.forEach(function(ele){
-            this.elec_total += CarbonFactors.ElectricitySource[ele];
+            elec_total += CarbonFactors.ElectricitySource[ele];
         });
 
         // find  percentage
         this.elec_percentage = new Object();
-        eco_keys.forEach(function(ele){
-            this.elec_percentage[ele] = CarbonFactors.ElectricitySource[ele]/total;
+        eco_keys.forEach((ele) => {
+            this.elec_percentage[ele] = CarbonFactors.ElectricitySource[ele]/elec_total;
         });
     }
+
+    // /**
+    //  * find electricity share
+    //  */
+    // findElectricityShare(){
+    //     let eco_keys = Object.keys(CarbonFactors["ElectricitySource"]);
+        
+    //     // find total
+    //     let elec_total = 0;
+    //     eco_keys.forEach(function(ele){
+    //         elec_total += CarbonFactors.ElectricitySource[ele];
+    //     });
+
+    //     // find  percentage
+    //     this.elec_percentage = new Object();
+    //     eco_keys.forEach(function(ele){
+    //         this.elec_percentage[ele] = CarbonFactors.ElectricitySource[ele]/total;
+    //     });
+    // }
 
     /**
      * generic finding total method
      * @param {Object} value_obj 
      * @param {String} subsection 
      */
-    #findGenericTotal(value_obj, subsection_factor){
+    findGenericTotal(value_obj, subsection_factor){
         let result = 0;
-        let value_keys = this.value_obj.keys();
+        let value_keys = Object.keys(value_obj);
         value_keys.forEach(function(ele){
-            result += value_obj[ele]*CarbonFactors[subsection_factor][ele];
+            if (CarbonFactors[subsection_factor][ele] != null){
+                result += value_obj[ele]*CarbonFactors[subsection_factor][ele];
+            }            
         });
 
-        this.total_co2 += result;
+        this.total_co2[subsection_factor] = result;
         return result;
     }
 
@@ -57,12 +79,12 @@ class CarbonCalculation{
      */
     findTotalElec(total_elec){
         let result = 0;
-        let elec_keys = this.elec_percentage.keys();
-        elec_keys.forEach(function(ele){
+        let elec_keys = Object.keys(this.elec_percentage);
+        elec_keys.forEach(ele  =>{
             result += this.elec_percentage[ele]*total_elec*CarbonFactors.ElectricityFactor[ele];
         });
-
-        this.total_co2 += result;
+        
+        this.total_co2.totalElec = result;
         return result;
     }
 
@@ -71,7 +93,7 @@ class CarbonCalculation{
      * @param {Object} value_obj 
      */
     findTotalOtherHomeEnergy(value_obj){
-        return this.#findGenericTotal(value_obj, "OtherHomeEnergyFactor");
+        return this.findGenericTotal(value_obj, "OtherHomeEnergyFactor");
     }
 
     /**
@@ -79,7 +101,7 @@ class CarbonCalculation{
      * @param {Object} value_obj 
      */
     findTotalTravel(value_obj){
-        return this.#findGenericTotal(value_obj, "TravelFactor");
+        return this.findGenericTotal(value_obj, "TravelFactor");
     }
 
     /**
@@ -87,7 +109,7 @@ class CarbonCalculation{
      * @param {Object} value_obj 
      */
     findTotalFood(value_obj){
-        return this.#findGenericTotal(value_obj, "FoodFactor");
+        return this.findGenericTotal(value_obj, "FoodFactor");
     }
 
     /**
@@ -95,7 +117,7 @@ class CarbonCalculation{
      * @param {Object} value_obj 
      */
     findTotalConsumerGoods(value_obj){
-        return this.#findGenericTotal(value_obj, "ConsumerGoodsFactor");
+        return this.findGenericTotal(value_obj, "ConsumerGoodsFactor");
     }
 
     /**
@@ -103,7 +125,7 @@ class CarbonCalculation{
      * @param {Object} value_obj 
      */
     findTotalServices(value_obj){
-        return this.#findGenericTotal(value_obj, "ServicesFactor");
+        return this.findGenericTotal(value_obj, "ServicesFactor");
     }
 
     /**
@@ -111,14 +133,18 @@ class CarbonCalculation{
      * @param {Object} value_obj 
      */
     findTotalWaste(value_obj){
-        return this.#findGenericTotal(value_obj, "WasteFactor");
+        return this.findGenericTotal(value_obj, "WasteFactor");
     }
 
     /**
      * find total emission
      */
     findTotal(){
-        return this.total_co2;
+        let sum = 0;
+        for (let [key, value] of Object.entries(this.total_co2)) {
+            sum += value;
+        }
+        return sum;
     }
 }
 
