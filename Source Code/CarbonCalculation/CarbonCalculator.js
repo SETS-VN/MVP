@@ -145,6 +145,7 @@ class CarbonCalculation{
             sum += value;
         }
         return sum;
+
     }
 }
 
