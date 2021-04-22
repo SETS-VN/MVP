@@ -1,0 +1,64 @@
+{
+    "ElectricitySource" : {
+        "Coal" : 114182,
+        "Oil" : 258,
+        "Natural gas" : 41729,
+        "Hydro" : 84125,
+        "Biofuels" : 126,
+        "Wind" : 497
+    },
+    "ElectricityFactor" : {
+        "Coal" :  0.63, 
+        "Oil" : 0.204, 
+        "Natural gas" : 0.0704, 
+        "Hydro" : 0.0704, 
+        "Biofuels" : 0.0704, 
+        "Wind" : 0 
+    },
+    "OtherHomeEnergyFactor" : {
+        "Gas (Heating)" : 0.204,
+        "Oil (Kerosene)" : 2.518,
+        "Oil (Gasoil)" : 2.674,
+        "Oil (HFO)" : 3.223,
+        "Gas (Prop/but)" : 1.5,
+        "Coal" : 2.457,
+        "Peat" : 1.36,
+        "Wood" : 1.035
+    },
+    "TravelFactor" : {
+        "Car" : 0.15,  
+        "Car (second person)" : 0.15,
+        "Bus" : 0.08, 
+        "Train" : 0.04, 
+        "Air" : 0.05, 
+        "Air (No. of oneway flights per year)" : 5.60 
+    },
+    "FoodFactor" : {
+        "Grains" : 0.1, 
+        "Vegetables" : 0.2, 
+        "Fruit" : 0.3, 
+        "Eggs" : 0.4, 
+        "Dairy (fresh milk, yogurt, cheese)" : 0.5, 
+        "Meat (Beef, Buffalo, Pork, Poultry)" : 0.6 
+    },
+    "ConsumerGoodsFactor" : {
+        "Clothing, shoes, accessories" : 0.15,
+        "Furniture, wood" : 0.15,
+        "Furniture, metal or mixed" : 0.15, 
+        "Appliances" : 0.15, 
+        "Electronics" : 0.15, 
+        "Toys and other plastics" : 0.15 
+    },
+    "ServicesFactor" : {
+        "Healthcare" : 0.15, 
+        "Home repair and maintenance" : 0.15, 
+        "Education and entertainment (beyond school)" : 0.15, 
+        "Other services (legal, etc.)" : 0.15 
+    },
+    "WasteFactor" : {
+        "Wastewater" : 0.15, 
+        "Organic waste (other than food)" : 0.15,
+        "Recycled paper, plastic, glass" : 0.15, 
+        "Non-reclyled/recyclable waste" : 0.15        
+    }
+}

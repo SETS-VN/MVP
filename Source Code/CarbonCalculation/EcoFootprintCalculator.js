@@ -2,7 +2,7 @@
 //holyshit, I can import directly from json file. Holyshit.
 import factors from "./Factors.json"
 
-class CarbonCalculation{
+class EcoFootprintCalculation{
 
     /** 
      * constructor
@@ -194,4 +194,4 @@ class CarbonCalculation{
 
 let temp = new CarbonCalculation('m', 5);
 
-export default CarbonCalculation;
+export default EcoFootprintCalculation;
