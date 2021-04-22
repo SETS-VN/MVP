@@ -9,7 +9,7 @@ export default function TransitDisplay(props){
         header = "Transit Info"
         previous = {true}
         previousCategory = {props.previousCategory}
-        previousText = "Energy Consumption"
+        previousText = "Food"
         next = {true}
         nextCategory = {props.nextCategory}
         nextText = "Goods"

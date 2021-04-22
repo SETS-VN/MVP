@@ -7,12 +7,10 @@ export default function HouseEnergyDisplay(props){
         icon = {<GiHouse size = {80}/>}
         iconColor = "text-blue-900"
         header = "Housing"
-        previous = {true}
-        previousCategory = {props.previousCategory}
-        previousText = "Food Consumption"
+        previous = {false}
         next = {true}
         nextCategory = {props.nextCategory}
-        nextText = "Transportation"
+        nextText = "Food"
         >
             {props.children}
         </CategoryManager>

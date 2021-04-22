@@ -1,9 +1,10 @@
 import 'react';
 import { FaBusAlt, FaCar, FaGasPump, FaMotorcycle, FaMusic, FaPhotoVideo, FaTaxi, FaWineBottle } from 'react-icons/fa';
-import { GiAirplaneArrival, GiBeachBucket, GiBroccoli, GiChemicalTank, GiCoalWagon, GiCottonFlower, GiElectric, GiEmptyMetalBucket, GiFriedEggs, GiFruiting, GiGrain, GiHouse, GiMailbox, GiMeat, GiMedicines, GiMilkCarton, GiPaperBomb, GiPlantsAndAnimals, GiStoneBlock, GiWaterRecycling, GiWoodBeam, GiWoodenChair } from 'react-icons/gi';
+import { GiAirplaneArrival, GiBeachBucket, GiBookPile, GiBroccoli, GiChemicalTank, GiCoalWagon, GiCottonFlower, GiElectric, GiEmptyMetalBucket, GiFriedEggs, GiFruiting, GiGrain, GiHouse, GiMailbox, GiMeat, GiMedicines, GiMilkCarton, GiPaperBomb, GiPlantsAndAnimals, GiStoneBlock, GiWaterRecycling, GiWoodBeam, GiWoodenChair } from 'react-icons/gi';
 import { IoMdTrain } from 'react-icons/io';
 import {MdLocalLaundryService, MdComputer} from 'react-icons/md'
 import {WiSmoke} from 'react-icons/wi'
+import {BsFillPeopleFill} from 'react-icons/bs'
 // Holds the data of every item to consider, and the values to calculate their output in fossil, cropland, ...
 // Even has the icon
 class CarbonItemsData {
@@ -51,47 +52,48 @@ class CarbonItemsExtraInput{
 
 // export data to render in React 
 const Items = [
-    new CarbonItemsData(1, "food", "Grains", <GiGrain size = {40}/> ,"kg"),
-    new CarbonItemsData(2, "food", "Vegetables",<GiBroccoli size = {40}/> ,"kg"),
-    new CarbonItemsData(3, "food", "Fruits", <GiFruiting size = {40}/>,"kg"),
-    new CarbonItemsData(4, "food", "Eggs", <GiFriedEggs size = {40}/>,"kg"),
-    new CarbonItemsData(5, "food", "Dairy", <GiMilkCarton size = {40}/>, "kg"),
-    new CarbonItemsData(6, "food", "Meat", <GiMeat size = {40}/>, "kg"),
+    new CarbonItemsData(1, "housing-energy", "Number of people in your household", <BsFillPeopleFill size = {30}/>, "people"),
+    new CarbonItemsData(2, "housing-energy", "Electricity", <GiElectric size = {30}/> ,"kWh/ year"),
+    new CarbonItemsData(3, "housing-energy", "Gas (Heating)", <WiSmoke size = {30}/>,"kg/ year"),
+    new CarbonItemsData(4, "housing-energy", "Oil (Kerosene)", <FaWineBottle size = {30}/>,"liters/ year"),
+    new CarbonItemsData(5, "housing-energy", "Oil (Gasoil)", <FaGasPump size = {30}/>,"liters/ year"),
+    new CarbonItemsData(6, "housing-energy", "Oil (HFO)", <FaGasPump size = {30}/>,"liters/ year"),
+    new CarbonItemsData(7, "housing-energy", "Gas (Propane/butane)", <GiChemicalTank size = {30}/>,"liters/ year"),
+    new CarbonItemsData(8, "housing-energy", "Coal", <GiCoalWagon size = {30}/>, "kg/ year"),
+    new CarbonItemsData(9, "housing-energy", "Peat", <GiStoneBlock size = {30}/>, "kg/ year"),
+    new CarbonItemsData(10, "housing-energy", "Wood", <GiWoodBeam size = {30}/>, "kg/ year"),
 
-    new CarbonItemsData(7, "housing-energy", "Electricity", <GiElectric size = {40}/> ,"kWh"),
-    new CarbonItemsData(8, "housing-energy", "Gas (heating)", <WiSmoke size = {40}/>,"kg"),
-    new CarbonItemsData(9, "housing-energy", "Oil (kerosene)", <FaWineBottle size = {40}/>,"liters"),
-    new CarbonItemsData(10, "housing-energy", "Oil (gasoil)", <FaGasPump size = {40}/>,"liters"),
-    new CarbonItemsData(11, "housing-energy", "Oil (HFO)", <FaGasPump size = {40}/>,"liters"),
-    new CarbonItemsData(12, "housing-energy", "GAS (propane/butane)", <GiChemicalTank size = {40}/>,"liters"),
-    new CarbonItemsData(13, "housing-energy", "Coal", <GiCoalWagon size = {40}/>, "kg"),
-    new CarbonItemsData(14, "housing-energy", "Peat", <GiStoneBlock size = {40}/>, "kg"),
-    new CarbonItemsData(15, "housing-energy", "Wood", <GiWoodBeam size = {40}/>, "kg"),
+    new CarbonItemsData(11, "food", "Grains", <GiGrain size = {30}/> ,"kg/ year"),
+    new CarbonItemsData(12, "food", "Vegetables",<GiBroccoli size = {30}/> ,"kg/ year"),
+    new CarbonItemsData(13, "food", "Fruit", <GiFruiting size = {30}/>,"kg/ year"),
+    new CarbonItemsData(14, "food", "Eggs", <GiFriedEggs size = {30}/>,"kg/ year"),
+    new CarbonItemsData(15, "food", "Dairy (fresh milk, yogurt, cheese)", <GiMilkCarton size = {30}/>, "kg/ year"),
+    new CarbonItemsData(16, "food", "Meat (beef, buffalo, pork, poultry)", <GiMeat size = {30}/>, "kg/ year"),
 
-    new CarbonItemsData(16, "transportation", "Bus", <FaBusAlt size = {40}/>,"km"),
-    new CarbonItemsData(17, "transportation", "Train", <IoMdTrain size = {40}/>,"km"),
-    new CarbonItemsData(18, "transportation", "Car (driver)", <FaCar size = {40}/>, "km"),
-    new CarbonItemsData(19, "transportation", "Car (passenger)", <FaTaxi size = {40}/>, "km"),
-    new CarbonItemsData(20, "transportation", "Motorcycle", <FaMotorcycle size = {40}/>, "km"),
-    new CarbonItemsData(21, "transportation", "Air travel", <GiAirplaneArrival size = {40}/>, "km"),
-    new CarbonItemsData(22, "transportation", "", null, "flights"), 
+
+
+    new CarbonItemsData(17, "transportation", "Bus", <FaBusAlt size = {30}/>,"km/ year"),
+    new CarbonItemsData(18, "transportation", "Train", <IoMdTrain size = {30}/>,"km/ year"),
+    new CarbonItemsData(19, "transportation", "Car", <FaCar size = {30}/>, "km/ year"),
+    new CarbonItemsData(20, "transportation", "Car (second person)", <FaTaxi size = {30}/>, "km/ year"),
+    new CarbonItemsData(21, "transportation", "Motorcycle", <FaMotorcycle size = {30}/>, "km/ year"),
+    new CarbonItemsData(22, "transportation", "Air travel", <GiAirplaneArrival size = {30}/>, "km/ year"),
+    new CarbonItemsData(23, "transportation", "", null, "flights/ year"), 
     
-    new CarbonItemsData(23, "goods", "Clothing, shoes, accessories", <GiCottonFlower size = {40}/>, "kg"),
-    new CarbonItemsData(24, "goods", "Furniture (wooden)",<GiWoodenChair size = {40}/>, "kg"),
-    new CarbonItemsData(25, "goods", "Furniture (metal/ mixed)", <GiEmptyMetalBucket size = {40}/>, "kg"),
-    new CarbonItemsData(26, "goods", "Appliances", <MdLocalLaundryService size = {40}/>, "kg"),
-    new CarbonItemsData(27, "goods", "Electronics", <MdComputer size = {40}/>, "kg"),
-    new CarbonItemsData(28, "goods", "Toys and other plastics", <FaPhotoVideo size = {40}/>, "kg"),
+    new CarbonItemsData(24, "goods", "Clothing, shoes, accessories", <GiCottonFlower size = {30}/>, "kg/ year"),
+    new CarbonItemsData(25, "goods", "Furniture, wood",<GiWoodenChair size = {30}/>, "kg/ year"),
+    new CarbonItemsData(26, "goods", "Books", <GiBookPile size = {30}/>, "kg/ year"),
+    new CarbonItemsData(28, "goods", "E-waste", <MdComputer size = {30}/>, "kg/ year"),
+    new CarbonItemsData(29, "goods", "Toys and other plastics", <FaPhotoVideo size = {30}/>, "kg/ year"),
 
-    new CarbonItemsData(29, "services", "Healthcare", <GiMedicines size = {40}/>,"VND"),
-    new CarbonItemsData(30, "services", "Home repair and maintanence", <GiHouse size = {40}/>, "VND"),
-    new CarbonItemsData(31, "services", "Entertainment and Education", <FaMusic size = {40}/>, "VND"),
-    new CarbonItemsData(32, "services", "Other services", <GiMailbox size = {40}/>, "VND"),
+    new CarbonItemsData(30, "services", "Healthcare", <GiMedicines size = {30}/>,"VND/ year"),
+    new CarbonItemsData(31, "services", "Home repair and maintanence", <GiHouse size = {30}/>, "VND/ year"),
+    new CarbonItemsData(32, "services", "Education and entertainment (beyond school)", <FaMusic size = {30}/>, "VND/ year"),
+    new CarbonItemsData(33, "services", "Other services (legal, etc.)", <GiMailbox size = {30}/>, "VND/ year"),
 
-    new CarbonItemsData(33, "waste", "Waste water",<GiWaterRecycling size = {40}/>, "kg"),
-    new CarbonItemsData(34, "waste", "Organic waste", <GiPlantsAndAnimals size = {40}/>, "kg"),
-    new CarbonItemsData(35, "waste", "Recycled paper, plastic, glass", <GiPaperBomb size = {40}/>, "kg"),
-    new CarbonItemsData(36, "waste", "Non-recycle waste", <GiBeachBucket size = {40}/>, "kg"),
+    new CarbonItemsData(34, "waste", "Wastewater",<GiWaterRecycling size = {30}/>, "kg/ year"),
+    new CarbonItemsData(35, "waste", "Organic waste (other than food)", <GiPlantsAndAnimals size = {30}/>, "kg/ year"),
+    new CarbonItemsData(36, "waste", "Recycled paper, plastic, glass", <GiPaperBomb size = {30}/>, "kg/ year"),
+    new CarbonItemsData(37, "waste", "Non-reclyled/recyclable waste", <GiBeachBucket size = {30}/>, "kg/ year"),
 ]
-
 export default Items;

@@ -1,74 +1,34 @@
-import { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, useCallback } from 'react'
 import 'tailwindcss/tailwind.css'
 import ItemDisplay from './subComponents/itemsDisplay/ItemDisplay'
-import ExtraChoiceDisplay from './subComponents/itemsDisplay/extraChoiceDisplay'
 import Items from './subComponents/itemInfo'
 import ResultDisplay from './subComponents/resultDisplay'
-import ExtraInputDisplay from './subComponents/itemsDisplay/extraInputDisplay'
-import CategoryManager from './subComponents/categories/categoryManager'
 import FoodDisplay from './subComponents/categories/food'
 import HouseEnergyDisplay from './subComponents/categories/houseing-energy'
-import EnergyDisplay from './subComponents/categories/energy'
 import TransitDisplay from './subComponents/categories/transit'
 import GoodsDisplay from './subComponents/categories/goods'
 import ServicesDisplay from './subComponents/categories/services'
 import WasteDisplay from './subComponents/categories/waste'
+import CarbonCalculation from '../../../CarbonCalculation/CarbonCalculator'
+import QuickNavigator from './subComponents/navigator'
 
-export default function CarbonCalc() {
+let items = Items;
+const calculator = new CarbonCalculation(1) 
+let apiObject = {};
 
-    // item to scroll to once user clicks next category
-    const pageStartRef = useRef(null);
-
-    /**
-     * Category management
-     */
-    const categories = ["food", "housing-energy", "transit", "goods", "services", "waste", "result"];
-    const [category, setCategory] = useState(0);
-
-    function nextCategory() {
-        if (category < 6) {
-            setCategory(category + 1);
-        }
+const areEqual = (prevProps, nextProps) => {
+    if (prevProps.category === nextProps.category){
+        return true;
+    } else {
+        return false;
     }
+};
 
-    function previousCategory() {
-        if (category > 0) {
-            setCategory(category - 1);
-        }
-    }
-
-    /**
-     * Result management
-     */
-    const [sum, setSum] = useState(0);
-    function updateResult() {
-        let reCountingSum = 0;
-        items.forEach(item => {
-            if (item.category != "typing" && item.category != "input") {
-                reCountingSum += item.value * item.fossilConversion * item.outsideFactor;
-                reCountingSum += item.value * item.forestConversion * item.outsideFactor;
-                reCountingSum += item.value * item.croplandConversion * item.outsideFactor;
-                reCountingSum += item.value * item.pastureConversion * item.outsideFactor;
-                reCountingSum += item.value * item.fisheriesConversion * item.outsideFactor;
-                reCountingSum += item.value * item.fisheriesConversion * item.outsideFactor;
-            }
-        });
-        setSum(reCountingSum);
-        setCategory(category + 1)
-    }
-
-    /**
-     * In-memory item management
-     */
-    const items = Items;
-    function changeValue(id, val) {
-        items[id - 1].value = val;
-    }
-
+const CarbonItemList = React.memo((props)=>{
     /**
      * Display management
      */
-    const carbonItemList = {
+     const carbonItemList = {
         "food": [],
         "housing-energy": [],
         "transportation": [],
@@ -86,35 +46,194 @@ export default function CarbonCalc() {
                 icon={item.icon}
                 measurement={item.measurement}
                 value={item.value}
-                changeValue={changeValue}
+                category = {item.category}
+                changeValue={props.changeValue}
             />
         )
     });
 
-    const Content = () => {
-        if (categories[category] === "food") {
-            return (
-                <FoodDisplay
-                    nextCategory={nextCategory}>
-                    {carbonItemList["food"]}
-                </FoodDisplay>
-            )
+    if (props.category === "housing-energy"){
+        return carbonItemList["housing-energy"];
+    }
+
+    if (props.category === "food"){
+        return carbonItemList["food"];
+    }
+    
+    
+    if (props.category === "transportation"){
+        return carbonItemList["transportation"]
+    }
+
+    if (props.category === "goods"){
+        return carbonItemList["goods"];
+    }
+
+    if (props.category === "services"){
+        return carbonItemList["services"];
+    }
+
+    if (props.category === "waste"){
+        return carbonItemList["waste"];
+    }
+}, areEqual)
+
+export default function CarbonCalc() {
+
+    // item to scroll to once user clicks next category
+    const pageStartRef = useRef(null);
+
+    /**
+     * Category management
+     */
+    const categories = ["housing-energy", "food", "transportation", "goods", "services", "waste", "result"];
+    const [category, setCategory] = useState(0);
+
+    function nextCategory() {
+        if (category < 6) {
+            setCategory(category + 1);
         }
-        else if (categories[category] === "housing-energy") {
+    }
+
+    function previousCategory() {
+        if (category > 0) {
+            setCategory(category - 1);
+        }
+    }
+
+    function specificCategory(cat_id){
+        if (0<=cat_id && cat_id <=5){
+            setCategory(cat_id)
+        }
+    }
+
+    /**
+     * Result management
+     */
+    const [sum, setSum] = useState(0);
+    const [categoryValues, setCategoryValues] = useState([0,0,0,0,0,0]);
+
+    items.forEach(item => {
+        apiObject[item.name] = item.value;
+    });
+
+    function updateResult() {
+        items.forEach(item => {
+            apiObject[item.name] = item.value;
+        });
+        setSum(Math.round(calculator.findTotal()))
+
+        setCategoryValues([updateHouseEnergy(), updateFood(), updateTransportation(),
+        updateGoods(), updateServices(), updateWaste()])
+
+        setCategory(category + 1)
+    }
+
+    const updateGenericCategory = useCallback((category) =>{
+        if (category === "food"){
+            return updateFood();
+        }
+        else if (category === "housing-energy"){
+            return updateHouseEnergy();
+        }
+        else if (category === "transportation"){
+            return updateTransportation();
+        }
+        else if (category === "goods"){
+            return updateGoods();
+        }
+        else if (category === "services"){
+            return updateServices();
+        }
+        else if (category === "waste"){
+            return updateWaste();
+        }
+    })
+
+    function updateHouseEnergy(){
+        items.forEach(item => {
+            apiObject[item.name] = item.value;
+        }); 
+
+        return (Math.round(calculator.findTotalOtherHomeEnergy(apiObject) + 
+        calculator.findTotalElec(apiObject["Electricity"])));
+    }
+
+    function updateFood(){
+        items.forEach(item => {
+            apiObject[item.name] = item.value;
+        });  
+
+        return (calculator.findTotalFood(apiObject));
+    }
+
+    function updateTransportation(){
+        items.forEach(item => {
+            apiObject[item.name] = item.value;
+        });   
+        return (calculator.findTotalTravel(apiObject));
+    }
+
+    function updateGoods(){
+        items.forEach(item => {
+            apiObject[item.name] = item.value;
+        });  
+
+        return (calculator.findTotalConsumerGoods(apiObject));
+    }
+
+    function updateServices(){
+        items.forEach(item => {
+            apiObject[item.name] = item.value;
+        });  
+
+        return (calculator.findTotalServices(apiObject));
+    }
+    
+    function updateWaste(){
+        items.forEach(item => {
+            apiObject[item.name] = item.value;
+        });  
+
+        return (calculator.findTotalWaste(apiObject));
+    }
+
+    /**
+     * In-memory item management
+     */
+
+    const changeValue = useCallback((id, category, val) => {
+        items[id - 1].value = val;
+        updateGenericCategory(category)
+    })
+
+    const Content = () => {
+        if (categories[category] === "housing-energy") {
             return (
                 <HouseEnergyDisplay
-                    previousCategory={previousCategory}
-                    nextCategory={nextCategory}>
-                    {carbonItemList["housing-energy"]}
+                    nextCategory={nextCategory}
+                    >
+                        <CarbonItemList changeValue = {changeValue} category = "housing-energy"/>
                 </HouseEnergyDisplay>
             )
         }
-        else if (categories[category] === "transit") {
+        else if (categories[category] === "food") {
+            return (
+                <FoodDisplay
+                    previousCategory={previousCategory}
+                    nextCategory={nextCategory}
+                    >
+                    <CarbonItemList changeValue = {changeValue} category = "food"/>
+                </FoodDisplay>
+            )
+        }
+        else if (categories[category] === "transportation") {
             return (
                 <TransitDisplay
                     previousCategory={previousCategory}
-                    nextCategory={nextCategory}>
-                    {carbonItemList["transportation"]}
+                    nextCategory={nextCategory}
+                    >
+                        <CarbonItemList changeValue = {changeValue} category = "transportation"/>
                 </TransitDisplay>
             )
         }
@@ -122,8 +241,9 @@ export default function CarbonCalc() {
             return (
                 <GoodsDisplay
                     previousCategory={previousCategory}
-                    nextCategory={nextCategory}>
-                    {carbonItemList["goods"]}
+                    nextCategory={nextCategory}
+                    >
+                        <CarbonItemList changeValue = {changeValue} category = "goods"/>
                 </GoodsDisplay>
             )
         }
@@ -131,8 +251,9 @@ export default function CarbonCalc() {
             return (
                 <ServicesDisplay
                     previousCategory={previousCategory}
-                    nextCategory={nextCategory}>
-                    {carbonItemList["services"]}
+                    nextCategory={nextCategory}
+                    >
+                        <CarbonItemList changeValue = {changeValue} category = "services"/>
                 </ServicesDisplay>
             )
         }
@@ -141,7 +262,7 @@ export default function CarbonCalc() {
                 <WasteDisplay
                     previousCategory={previousCategory}
                     nextCategory={updateResult}>
-                    {carbonItemList["waste"]}
+                        <CarbonItemList changeValue = {changeValue} category = "waste"/>
                 </WasteDisplay>
             )
         }
@@ -149,6 +270,7 @@ export default function CarbonCalc() {
             return (
                 <ResultDisplay
                     value={sum}
+                    categoryValues = {categoryValues}
                     previousCategory={previousCategory} />
             )
         }
@@ -160,9 +282,12 @@ export default function CarbonCalc() {
     }, [category]);
 
     return (
-        <>
+        <div>
             <div ref={pageStartRef}></div>
-            <Content />
-        </>
+            <div>
+            {category === 6 ? null : <QuickNavigator changeCategory = {specificCategory}/>}
+            <Content className = "min-h-100vh"/>
+            </div>
+        </div>
     )
 }

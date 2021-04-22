@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import 'tailwindcss/tailwind.css'
 
 export default function CategoryManager(props) {
@@ -38,21 +37,24 @@ export default function CategoryManager(props) {
         </div>
     )
 
-
     return (
         <div className="flex flex-col ml-auto mr-auto my-8">
             <div className="flex ml-auto mr-auto w-8/12 items-center">
                 <div className={props.iconColor}>
                     {props.icon}
                 </div>
-                <h1 className = "ml-10">
+                <h2 className = "ml-5">
                     {props.header}
-                </h1>
+                </h2>
             </div>
             <hr className="w-8/12 border-0 border-b-2 border-green-400 ml-auto mr-auto mb-4"></hr>
-            {props.children}      
+            <div className = "h-100">
+                {props.children}
+            </div>
+            
             <br></br>
             {PageButtons}
         </div>
+        
     )
 }
