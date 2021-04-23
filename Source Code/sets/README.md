@@ -22,4 +22,4 @@ The Carbon Calculator is at [http://localhost:3000/carbon-calculator](http://loc
 The Eco footprint calculator is at [http://localhost:3000/ecoCalc](http://localhost:3000/eco-calculator)
 
 ## Production
-There is an actual website deployed at (https://sets-deployment-clone.vercel.app/carbon-calculator)[https://sets-deployment-clone.vercel.app/carbon-calculator]. That should be what we will display
+There is an actual website deployed at [https://sets-deployment-clone.vercel.app/carbon-calculator](https://sets-deployment-clone.vercel.app/carbon-calculator). That should be what we will display

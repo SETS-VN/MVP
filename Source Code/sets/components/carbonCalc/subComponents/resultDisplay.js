@@ -58,14 +58,15 @@ export default function ResultDisplay(props) {
 
     const PieChartContent = (props) => {
         return (
-            <div className = " w-8/12 ml-auto mr-auto">
+            <div className = " w-10/12 ml-auto mr-auto">
+            <h2 className = "ml-auto mr-auto -mb-24 text-center">Distribution of your emissions</h2>
             <PieChart
-                label={({ dataEntry }) => dataEntry.title}
+                label={({ dataEntry }) => {return (dataEntry.title + ": " + dataEntry.value.toFixed(2))}}
                 labelPosition = {110}
                 labelStyle={(index) => ({
-                    fontSize: '3px',
+                    fontSize: '2px',
                   })}
-                radius = {35}
+                radius = {25}
                 animate
                 data = {[
                 {title: 'Housing', value: props.values[0], color: '#D1D5DB'},

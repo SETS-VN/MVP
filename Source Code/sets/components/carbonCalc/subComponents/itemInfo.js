@@ -83,17 +83,17 @@ const Items = [
     new CarbonItemsData(24, "goods", "Clothing, shoes, accessories", <GiCottonFlower size = {30}/>, "kg/ year"),
     new CarbonItemsData(25, "goods", "Furniture, wood",<GiWoodenChair size = {30}/>, "kg/ year"),
     new CarbonItemsData(26, "goods", "Books", <GiBookPile size = {30}/>, "kg/ year"),
-    new CarbonItemsData(28, "goods", "E-waste", <MdComputer size = {30}/>, "kg/ year"),
-    new CarbonItemsData(29, "goods", "Toys and other plastics", <FaPhotoVideo size = {30}/>, "kg/ year"),
+    new CarbonItemsData(27, "goods", "E-waste", <MdComputer size = {30}/>, "kg/ year"),
+    new CarbonItemsData(28, "goods", "Toys and other plastics", <FaPhotoVideo size = {30}/>, "kg/ year"),
 
-    new CarbonItemsData(30, "services", "Healthcare", <GiMedicines size = {30}/>,"VND/ year"),
-    new CarbonItemsData(31, "services", "Home repair and maintanence", <GiHouse size = {30}/>, "VND/ year"),
-    new CarbonItemsData(32, "services", "Education and entertainment (beyond school)", <FaMusic size = {30}/>, "VND/ year"),
-    new CarbonItemsData(33, "services", "Other services (legal, etc.)", <GiMailbox size = {30}/>, "VND/ year"),
+    new CarbonItemsData(29, "services", "Healthcare", <GiMedicines size = {30}/>,"VND/ year"),
+    new CarbonItemsData(30, "services", "Home repair and maintanence", <GiHouse size = {30}/>, "VND/ year"),
+    new CarbonItemsData(31, "services", "Education and entertainment (beyond school)", <FaMusic size = {30}/>, "VND/ year"),
+    new CarbonItemsData(32, "services", "Other services (legal, etc.)", <GiMailbox size = {30}/>, "VND/ year"),
 
-    new CarbonItemsData(34, "waste", "Wastewater",<GiWaterRecycling size = {30}/>, "kg/ year"),
-    new CarbonItemsData(35, "waste", "Organic waste (other than food)", <GiPlantsAndAnimals size = {30}/>, "kg/ year"),
-    new CarbonItemsData(36, "waste", "Recycled paper, plastic, glass", <GiPaperBomb size = {30}/>, "kg/ year"),
-    new CarbonItemsData(37, "waste", "Non-reclyled/recyclable waste", <GiBeachBucket size = {30}/>, "kg/ year"),
+    new CarbonItemsData(33, "waste", "Wastewater",<GiWaterRecycling size = {30}/>, "kg/ year"),
+    new CarbonItemsData(34, "waste", "Organic waste (other than food)", <GiPlantsAndAnimals size = {30}/>, "kg/ year"),
+    new CarbonItemsData(35, "waste", "Recycled paper, plastic, glass", <GiPaperBomb size = {30}/>, "kg/ year"),
+    new CarbonItemsData(36, "waste", "Non-reclyled/recyclable waste", <GiBeachBucket size = {30}/>, "kg/ year"),
 ]
 export default Items;
