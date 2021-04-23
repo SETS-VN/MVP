@@ -2,7 +2,6 @@ import 'tailwindcss/tailwind.css'
 
 export default function ExtraInputDisplay(props){
     function handleChange(event) {
-        console.log(props.id)
         const inp = event.target.value
         props.changeOutsideFactor(props.associatedID, inp);
         props.changeValue(props.id, inp)

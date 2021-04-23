@@ -2,7 +2,6 @@ import CategoryManager from './categoryManager'
 import {GiHamburger} from 'react-icons/gi';
 
 export default function FoodDisplay(props){
-    console.log("FOOD IS RE-RENDERING?")
     return (
         <CategoryManager
         icon = {<GiHamburger size = {50}/>}

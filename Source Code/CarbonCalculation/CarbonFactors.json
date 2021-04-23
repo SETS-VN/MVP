@@ -55,9 +55,9 @@
         "Other services (legal, etc.)" : 0.15 
     },
     "WasteFactor" : {
-        "Wastewater" : 0.15, 
-        "Organic waste (other than food)" : 0.15,
-        "Recycled paper, plastic, glass" : 0.15, 
-        "Non-reclyled/recyclable waste" : 0.15        
+        "Wastewater" : 0.001, 
+        "Organic waste (other than food)" : 0.160,
+        "Recycled paper, plastic, glass" : 0.021, 
+        "Non-reclyled/recyclable waste" : 0.304        
     }
 }

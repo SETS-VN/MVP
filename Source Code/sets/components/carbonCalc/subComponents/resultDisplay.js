@@ -6,7 +6,7 @@ export default function ResultDisplay(props) {
 
     const ComparisonBars = (props) => {
 
-        const userPercentage = props.userTotal / props.worldAverage;
+        const userPercentage = props.userTotal / (props.worldAverage*1000);
 
         if (userPercentage > 1) {
             const worldPercentageString = Math.round(1 / userPercentage * 50) + "%";
@@ -32,14 +32,12 @@ export default function ResultDisplay(props) {
         }
         else {
             const userPercentageString = Math.round(userPercentage * 50) + "%";
-            console.log(userPercentage)
-            console.log(userPercentageString)
             return (
                 <div>
                     <p className="text-3xl mb-0">Your annual emissions</p>
                     <div className="flex items-center -mt-4">
                         <div className="shadow bg-green-400 rounded-lg py-2 px-2"
-                            style={{ width: '0%' }}>
+                            style={{ width: userPercentageString }}>
                             {/* <div className ="bg-teal text-xs leading-none py-1 text-center text-white"></div> */}
                         </div>
                         <p className="text-3xl ml-auto"><b>{props.userTotal.toFixed(2)}</b> tons of CO2</p>
