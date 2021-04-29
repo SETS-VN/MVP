@@ -1,0 +1,1 @@
+# This is where SETS Platform be built with NextJS
