@@ -12,8 +12,7 @@ There are two kinds of Components:
 
 1. Introduction
 1. About SETS
-1. About us
-1. Contact
+1. About members
 
 # Learn Group
 * helps customer understand in - depth Emission Exchange and related information
