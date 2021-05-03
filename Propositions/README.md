@@ -8,7 +8,7 @@
 6. User can sell their own carbon credit through trade
 7. User can buy other's carbon credit through trade
 8. User can file claim for disputes
-9. Advertiser can display their banner/ image/ video/ social links
+9. Advertisers can display their banner/ image/ video/ social links
 10. All user transactions should be detailed in a history page
 
 
