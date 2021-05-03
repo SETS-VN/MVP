@@ -1,12 +1,14 @@
 # Potential list of features to implement. 
 ## Requirements for the user:
 1. User signs-up/ log-in as a person
-2. User deposits money with Momo
-3. User can use Carbon calculator w/ different inputs to know how much carbon is needed 
-4. User can see set of existing packages of carbon (compliance market)
-5. User can sell their own carbon credit through trade
-6. User can buy other's carbon credit through trade
-7. All user transactions should be detailed in a history page
+2. User ID card verification to enable payment/ green points/ bonus/ coin airdrop
+3. User deposits money with Momo
+4. User can use Carbon calculator w/ different inputs to know how much carbon is needed 
+5. User can see set of existing packages of carbon (compliance market)
+6. User can sell their own carbon credit through trade
+7. User can buy other's carbon credit through trade
+8. User can file claim for disputes
+9. All user transactions should be detailed in a history page
 
 
 ## Details for each implementation
