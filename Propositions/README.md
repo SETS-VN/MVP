@@ -1,15 +1,16 @@
 # Potential list of features to implement. 
 ## Requirements for the user:
-1. User signs-up/ log-in as a person
-2. User ID card verification to enable payment/ green points/ bonus/ coin airdrop
-3. User deposits money with Momo
-4. User can use Carbon calculator w/ different inputs to know how much carbon is needed 
-5. User can see set of existing packages of carbon (compliance market)
-6. User can sell their own carbon credit through trade
-7. User can buy other's carbon credit through trade
-8. User can file claim for disputes
-9. Advertisers can display their banner/ image/ video/ social links
-10. All user transactions should be detailed in a history page
+1. User signs-up/ logs-in as a person, using email/phone number/ social accounts like FB, Youtube, Telegram, Twitter, Tiktok, Instagram
+2. User can play social games to attain green targets/ scores in the reward system. Here they can voicechat or send pics/ clips about environment issue or their lifestyle
+3. User can use Carbon calculator w/ different inputs to know how much carbon is needed 
+4. User can see different packages/ credits/ quota/ green bond offers and the advertisements.
+5. Advertisers can display their banner/ image/ video/ social links
+6. User verify the ID card to enable payment/ green points/ bonus/ coin airdrop
+7. User deposits money into SETS' E-wallet through Momo/ banks
+8. User can sell their own carbon credits through trade
+9. User can buy other's carbon credit through trade
+10. User can file claim for disputes
+11. All user transactions should be detailed in a history page
 
 
 ## Details for each implementation
@@ -24,7 +25,26 @@ Input for sign-in is simply checks if email/ password combination exists by encr
 
 All log-in cookies sent to the user will (for now) be valid, as long as it exists. 
 
-2. **User deposits money w/ Momo**
+3. **Carbon calculator**
+
+The basic design is:  
+Create items (clothes - kg, washing powder - kg, meat - kg, beer - kg, wine - kg, electricity - watts, gas - V?, ceramics - kg, wood - kg, steel - kg, aircraft - distance, trains - distance, motorcycle - distance)   
+
+Each item will also have a "conversion value" (example: 3kg of clothes -> 3.0.3 kg of CO2, or 1000 km of aircraft -> 1000.0.5 kg of CO2).   
+
+All items will be displayed, with an input next to them (default as 0)  
+Then, the user can fill out the input to indicate how much clothes / meat / ... is used in 1 year.  
+
+And finally, there is an add total button and a result displayer, which is (sum(measured value * conversion value)).  
+
+
+4. **Voluntary market / packages of carbon**
+   
+Here, we create the packages w/ price, carbon credit gained, number of packages to buy (default as 1), and button to buy.  
+
+The button redirects the user to a Momo transaction. Once the payment is done, the returnURL should be a waiting page to verify the transaction (from the notiyURL), which will redirect the user to a success page if it successful, or a failure page if it is not. The successful page should have a link to the history page.   
+
+7. **User deposits money into SETS' E-wallet through Momo/ bank NAPAS**
   
 Docs to refer to: https://developers.momo.vn/v1/#cong-thanh-toan-momo-gioi-thieu   
 Sample code: https://github.com/momo-wallet/payment/blob/master/nodejs/MoMo.js   
@@ -47,43 +67,27 @@ Basic idea: send json in the following format (user -> our business account)
   
 We may also want to check the status of the URL sometime in the future. 
 
-3. **Carbon calculator**
 
-The basic design is:  
-Create items (clothes - kg, washing powder - kg, meat - kg, beer - kg, wine - kg, electricity - watts, gas - V?, ceramics - kg, wood - kg, steel - kg, aircraft - distance, trains - distance, motorcycle - distance)   
-
-Each item will also have a "conversion value" (example: 3kg of clothes -> 3.0.3 kg of CO2, or 1000 km of aircraft -> 1000.0.5 kg of CO2).   
-
-All items will be displayed, with an input next to them (default as 0)  
-Then, the user can fill out the input to indicate how much clothes / meat / ... is used in 1 year.  
-
-And finally, there is an add total button and a result displayer, which is (sum(measured value * conversion value)).  
-
-
-4. **Compliance market / packets of carbon**
-   
-Here, we create the packet w/ price, carbon credit gained, number of packets to buy (default as 1), and button to buy.  
-
-The button redirects the user to a Momo transaction. Once the payment is done, the returnURL should be a waiting page to verify the transaction (from the notiyURL), which will redirect the user to a success page if it successful, or a failure page if it is not. The successful page should have a link to the history page.   
-
-5. **Sell their own carbon credit**
+8. **Sell their own carbon credit**
 
 Here, the user will create a similar packet with price, carbon credit gained, and buy button. After the necessary info is retreived (and the amount of carbon credit in the account is verified), we display it in the free-market page.
 
 There will also be an edit page, that can be accessed by clicking on the history of user transactions
   
-6. **Buy other's carbon credit**  
+9. **Buy other's carbon credit**  
 
 There is a list of carbon sell-deals, and when the user buys (after verfication), we send the user to the Momo api to pay us. After our money is recieved, we pay the seller (somehow?), and the carbon credit is updated in both the buyer and the seller's profile  
 
 
-7. **User transactions**
+11. **User transactions**
 
 This will be updated after 4, 5, 6. 
 We will display: type of action (bought/ sold/ pending sell), money payed/ recieved/ waiting for, carbon credit received/ payed/ waiting for, and edit (for sell deals that aren't done)
 
 The total remaining carbon credit is detailed at the end. 
 
-8. **Applying carbon credit**
+12. **Applying carbon credit**
 
-Currently unsure how carbon credit is used, besides from selling. 
+SETS' carbon credit coin is used as asset in transaction. It functions in 2 markets: 
+- It represents actual carbon credit transactions.
+- But it has its blockchain nature and is traded freely in the crypto currency market also.
