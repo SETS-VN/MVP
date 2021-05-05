@@ -38,7 +38,7 @@ Then, the user can fill out the input to indicate how much clothes / meat / ... 
 And finally, there is an add total button and a result displayer, which is (sum(measured value * conversion value)).  
 
 
-4. **Voluntary market / packages of carbon**
+4. **Voluntary market / package offers**
    
 Here, we create the packages w/ price, carbon credit gained, number of packages to buy (default as 1), and button to buy.  
 
