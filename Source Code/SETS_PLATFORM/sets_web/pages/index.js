@@ -11,7 +11,6 @@ export default function Home() {
   return (
     <>
     <Navibar/>
-    <br></br>
       <Head>
         <title>SETS</title>
         <link rel="icon" href="/favicon-32x32.png" />
