@@ -1,12 +1,13 @@
 import Container from 'react-bootstrap/Container'
 import styles from './about-emissions.module.css'
 
-
+// Has two sections: 
+// What is Emissions Trading? && Why is emissions trading important
 export default function AboutEmissions(){
     return (
         <Container fluid>
             <br></br><br></br>
-            <div className="row" id = "definition">
+            <div className="row" >
                 <div className="col-lg-6 col-md-6 col-sm-12 ">
                     <h1 className="text-center">What is Emission Trading?<br></br></h1>
                     <p className={styles.content1}>
@@ -19,13 +20,13 @@ export default function AboutEmissions(){
                     <img width="500" height="350" src="/assets/pic2.png/" className="img-fluid"></img>
                 </div>
             </div>
-            <br></br><br></br>
-            <div className="row" id = "importance">
+            <br id = "importance"></br><br></br>
+            <div className="row">
                 <div className="col-lg-6 col-md-6 col-sm-12 mx-auto">
                     <img width="500" height="350" src="/assets/pic1.jpg/" className="img-fluid"></img>
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-12 mx-auto ">
-                    <h1>Why is Emission Trading<br></br> important?<br></br></h1>
+                    <h1 >Why is Emission Trading<br></br> important?<br></br></h1>
                     <p className={styles.content2}>
                     Climate change is the biggest negative economic externality that<br></br>human has ever faced in history. Emissions trading is a key part<br></br>of global efforts to reduce the man-made greenhouse gas<br></br>emissions that are causing climate change﻿, meeting the Paris<br></br>Agreement﻿ target of keeping temperature rise below 2°C.
                     <br></br><br></br>
@@ -35,7 +36,6 @@ export default function AboutEmissions(){
                     <br></br><br></br>
                     </p>
                 </div>
-                
             </div>
         </Container>
     )

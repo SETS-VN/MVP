@@ -2,12 +2,15 @@ import Container from 'react-bootstrap/Container'
 import styles from './sets-role.module.css'
 import Row from 'react-bootstrap/Row'
 
+// Details SETS role in the about-sets page
 export default function SetsRole(){
     return (
         <Container>
+            <br id = "sets-role"></br>
+            <br></br>
             <Row>
                 <div className="col-md-12 text-md-center">
-                <h1 >How SETS can help you reduce Emission</h1>
+                <h1>How SETS can help you reduce Emission</h1>
                 </div>
 
                 <div className="d-flex mx-auto">

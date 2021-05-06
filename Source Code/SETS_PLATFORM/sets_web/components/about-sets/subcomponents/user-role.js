@@ -2,11 +2,15 @@ import Container from 'react-bootstrap/Container'
 import styles from './user-role.module.css'
 import Row from 'react-bootstrap/Row'
 
+// explains user role in Global Emission Reduction in About Sets
 export default function UserRole(){
     return (
         <Container>
-            <Row>
-                <div className="col-md-12 text-md-center">
+            <br id = "user-role"></br>
+            <br></br>
+            <br></br>
+            <Row >
+                <div className="col-md-12 text-md-center" >
                 <h1 >How can you be part of global<br></br>Emission Reduction mission</h1>
                 </div>
 
