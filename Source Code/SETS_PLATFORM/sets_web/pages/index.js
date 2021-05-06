@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { Container, Row, Card, Button } from 'react-bootstrap'
 import CarouSel from '../components/carousel/carousel'
 import Navibar from '../components/navbar/navbar'
 import Footer from '../components/footer/footer'

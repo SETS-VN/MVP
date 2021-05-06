@@ -24,23 +24,14 @@ export default function ContactForm() {
                         </Form.Group>
                         <Form.Group as={Col} controlId="formPhoneNumber">
                             <Form.Label>Phone number</Form.Label>
-                            <Form.Control type="password"/>
+                            <Form.Control type="text"/>
                         </Form.Group>
                     </Row>
 
                     <Row>
-                        <Form.Group as={Col} controlId="formServiceType">
-                            <Form.Label>Pick your service</Form.Label>
-                            <Form.Control as="select">
-                                <option>Consulting</option>
-                                <option>Planning</option>
-                                <option>Nutrition</option>
-                            </Form.Control>
-                        </Form.Group>
-
                         <Form.Group as={Col} controlId="formSubject">
                             <Form.Label>Subject</Form.Label>
-                            <Form.Control type="password"/>
+                            <Form.Control type="text"/>
                         </Form.Group>
                     </Row>
 
