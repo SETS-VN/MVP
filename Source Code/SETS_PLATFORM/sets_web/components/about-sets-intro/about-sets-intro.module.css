@@ -1,0 +1,13 @@
+.questions{
+    display: flex;
+}
+
+.questionContent{
+    text-decoration: underline;
+    cursor: pointer;
+    color: #0275d8;
+}
+
+.bullet{
+    color: #272829;
+}

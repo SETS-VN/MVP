@@ -1,0 +1,13 @@
+.cards{
+    margin: 0rem 4rem;
+    padding: 2rem 0rem;
+    border: 1px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.cards:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
