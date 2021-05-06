@@ -13,9 +13,9 @@ export default function Navibar() {
         
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-            <NavDropdown title="About SETS" id="basic-nav-dropdown" href = "/about-sets">
-                <NavDropdown.Item href="/members">Members</NavDropdown.Item>
-                
+            <NavDropdown title="About Us" id="basic-nav-dropdown" >
+                <NavDropdown.Item href="/about-sets">About SETS</NavDropdown.Item>
+                <NavDropdown.Item href="/members">Members</NavDropdown.Item>    
                 <NavDropdown.Item href="/contact">Contact Us</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Trading Emissions" id="basic-nav-dropdown">
