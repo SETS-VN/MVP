@@ -9,9 +9,9 @@ import styles from "./contact-info.module.css"
 
 export default function ContactInfo(){
     return(
-        <div className = "container mx-auto w-75 pt-5 pb-5">
+        <div className = "container mx-auto w-75 pt-5 pb-2">
             <h1 className = "text-center mt-5">
-                SETS contact details
+                Contact details
             </h1>
             <hr className="mt-5 mb-5 w-25 bg-success"></hr>
             <Row className = "mt-5 mb-5">
