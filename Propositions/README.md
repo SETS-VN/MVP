@@ -89,9 +89,6 @@ There will also be an edit page, that can be accessed by clicking on the history
 
 There is a list of carbon sell-deals, and when the user buys (after verfication), we send the user to the Momo api to pay us. After our money is recieved, we pay the seller (somehow?), and the carbon credit is updated in both the buyer and the seller's profile  
 
-
-11. **User transactions**
-
 This will be updated after 4, 5, 6. 
 We will display: type of action (bought/ sold/ pending sell), money payed/ recieved/ waiting for, carbon credit received/ payed/ waiting for, and edit (for sell deals that aren't done)
 
