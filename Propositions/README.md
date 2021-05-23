@@ -97,7 +97,7 @@ We will display: type of action (bought/ sold/ pending sell), money payed/ recie
 
 The total remaining carbon credit is detailed at the end. 
 
-11. **User can file claim for disputes*
+11. **User can file claim for disputes**
 
 12. **Applying carbon credit** history page
 
